@@ -50,7 +50,20 @@ Default credentials are set up in `config/config.ini` (`test-user:test-user` by 
 
 The PHP [development server][php-web-server] can be run via `php -S localhost:8000`.
 
+### Running with Docker
+
+Install Docker, build the image, then run it.
+
+```
+docker build -t srobo-ide:local .
+docker run -d --rm --network=host -t srobo-ide:local
+```
+
+Then visit http://localhost:8080
+
 [php-web-server]: https://www.php.net/manual/en/features.commandline.webserver.php
+
+### Apache HTTPD
 
 If you're using Apache HTTPD, note that by default Ubuntu Lucid will not execute
 PHP files in `public_html` folders. This can be resolved by following the
